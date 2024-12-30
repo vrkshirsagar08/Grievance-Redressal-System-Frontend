@@ -1,0 +1,119 @@
+<div *ngIf="!isAdminLoggedIn && !isEmployeeLoggedIn  ">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">Grievance Redressal System</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+    <button mat-button routerLink="/aboutus" routerLinkActive="active">AboutUs</button>
+    <button mat-button routerLink="/contactus" routerLinkActive="active">ContactUs</button>
+    <button mat-button routerLink="/userdashboard" routerLinkActive="active">Submit Grievance</button>
+
+    <!--<button mat-button routerLink="/register" routerLinkActive="active">Register</button>-->
+
+    <button mat-button [matMenuTriggerFor]="registerMenu">Register</button>
+    <mat-menu #registerMenu="matMenu">
+      <button mat-menu-item routerLink="/register" routerLinkActive="active" class="employee-button"
+        [ngStyle]="{'color': 'blue'}">Employee</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="loginMenu">Login</button>
+    <mat-menu #loginMenu="matMenu">
+      <button mat-menu-item routerLink="/login" routerLinkActive="active" class="admin-button"
+        [ngStyle]="{'color': 'blue'}">Admin</button>
+      <button mat-menu-item routerLink="/login" routerLinkActive="active" class="employee-button"
+        [ngStyle]="{'color': 'blue'}">Employee</button>
+    </mat-menu>
+    <!--<button mat-button routerLink="/login" routerLinkActive="active">Login</button>-->
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">Grievance Redressal System</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Admin Dashboard</button>
+    <button mat-button routerLink="/admin/task/post" routerLinkActive="active">Post Task</button>
+    <button mat-button routerLink="/admin/show" routerLinkActive="active">Show Grievance</button>
+
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isEmployeeLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">Grievance Redressal System</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/employee/dashboard" routerLinkActive="active">Employee Dashboard</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+
+<!--<div *ngIf="isUserLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">Grievance Redressal System</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/" routerLinkActive="active"> Dashboard</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>-->
+
+<router-outlet></router-outlet>
+
+<footer style="background-color: #735DA5;" class="text-light pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-4">
+        <h3 class="fw-bold"> Mumbai Municipal Corporation </h3>
+        <p class="pt-2">Shop No 56, Gr Flr, Bedekar Sadan No 3, Gharpure Path, Formally Known As Mugbhat Lane, Girgaon, Mumbai - 400004 Maharashtra, India</p>
+        <p class="mb-2">020-25501000
+        </p>
+        <p>020-25501130
+        </p>
+      </div>
+      <div class="col">
+        <h4>Menu</h4>
+        <ul class="list-unstyled pt-2">
+          <li class="py-1" > <a href="/" style="color: white; text-decoration: none;">Home</a></li>
+          <li class="py-1" ><a href="/register" style="color: white; text-decoration: none;">Register</a></li>
+          <li class="py-1" ><a href="/aboutus" style="color: white; text-decoration: none;">About</a></li>
+          <li class="py-1" ><a href="/contactus" style="color: white; text-decoration: none;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>More</h4>
+        <ul class="list-unstyled pt-2">
+          <li class="py-1">Other Pages</li>
+          <li class="py-1">FAQs</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Services</h4>
+        <ul class="list-unstyled pt-2">
+          <li class="py-1">Online Services</li>
+          <li class="py-1">Care</li>
+          <li class="py-1">Open Data Portal</li>
+          <li class="py-1">App Store</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3 text-lg-end">
+        <h4>Social Media Links</h4>
+        <div class="social-media pt-2">
+          <a href="https://www.facebook.com/" class="text-light fs-2 me-3"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="text-light fs-2 me-3"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="text-light fs-2 me-3"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-light fs-2"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="container px-5">
+        <hr>
+        <div class="d-sm-flex justify-content-between py-1">
+          <p>2025 © MMC cop. All Rights Reserved. </p>
+          <p>
+            <a href="#" class="text-light text-decoration-none pe-4">Terms of use</a>
+            <a href="#" class="text-light text-decoration-none"> Privacy policy</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

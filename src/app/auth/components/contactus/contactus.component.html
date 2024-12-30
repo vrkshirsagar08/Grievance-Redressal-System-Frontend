@@ -1,0 +1,165 @@
+<!-- <section>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="col-md-9 col-lg-6 col-xl-5 image-container ">
+        <div class="circular-sliding-image">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+            alt="Sample image">
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h2>GET IN TOUCH</h2>
+        <form>
+
+          <div class="form-outline mb-2">
+            <label for="regular1" class="control-label">Full Name</label>
+            <input type="text" formControlName="name" id="name" class="form-control form-control-lg" placeholder="Your Name" required style="border-radius: 40px;" [(ngModel)]="form.name" />
+          </div>
+
+          <div class="form-outline mb-2">
+            <input type="email" formControlName="email" id="email" class="form-control form-control-lg"
+              placeholder="Your Email" required style="border-radius: 40px;" />
+          </div>
+
+          <div class="form-group">
+            <textarea formControlName="msg" id="msg" class="form-control p-4" rows="3" placeholder="Your Message"
+              required style="border-radius: 40px; "></textarea>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit"  class="btn btn-primary btn-lg w-100"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; border-radius: 40px;">Send Message</button>
+            <p ></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="text-center footer" style="color: black;">
+Designed By <a href="https://github.com/Rohitashsingh89"
+    target="_blank" style="color: blue;">Rohitah Singh</a>
+</footer> --> 
+
+
+<section class="pmd-contact-us bg-dark text-white py-4 border-bottom">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-12 sm-mb-4">
+              <h2>Get in touch!</h2>
+              <form>
+                  <div class="row">
+                      <div class="col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Full Name</label>
+                              <input type="text" id="regular1" [(ngModel)]="form.name" [ngModelOptions]="{ standalone: true }" class="form-control" pmdTextField>
+                          </pmd-form-group>
+                      </div>
+                      <div class="col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Email Id</label>
+                              <input type="email" id="regular1" [(ngModel)]="form.email" [ngModelOptions]="{ standalone: true }"  class="form-control" pmdTextField>
+                          </pmd-form-group>
+                      </div>
+                      <div class="col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Addhar No</label>
+                              <input type="text" id="regular1"[(ngModel)]="form.addhar" [ngModelOptions]="{ standalone: true }"  class="form-control" pmdTextField>
+                          </pmd-form-group>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Mobile Number</label>
+                              <input type="tel" id="regular1" [(ngModel)]="form.phone" [ngModelOptions]="{ standalone: true }" class="form-control" pmdTextField>
+                          </pmd-form-group>
+                      </div>
+                      <div class="col-md-6 col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Subject</label>
+                              <input type="text" id="regular1" [(ngModel)]="form.subject" [ngModelOptions]="{ standalone: true }" class="form-control" pmdTextField>
+                          </pmd-form-group>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-12">
+                          <pmd-form-group pmd-floating-label>
+                              <label for="regular1" class="control-label">Add your Query</label>
+                              <textarea class="form-control" pmdTextField [(ngModel)]="form.query" [ngModelOptions]="{ standalone: true }" ></textarea>
+                          </pmd-form-group>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-12">
+                          <button (click)="send()" type="button" pmdRipple pmd-btn color="light" class="mr-2">Send Message</button>
+                          <button type="button" pmdRipple pmd-btn-outline color="light">Cancel</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="col-md-6 col-12">
+              <h2>Contact Details</h2>
+              <div class="row mt-4">
+                  <div class="col-12">
+                      <div class="media pt-2">
+                          <i class="material-icons md-light pmd-icon-md mr-3">business</i>
+                          <div class="media-body">
+                              <p class="pmd-list-subtitle mb-1  text-white">Registered Office</p>
+                              <h2 class="pmd-list-title text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                                  Shop No 56, Gr Flr, Bedekar Sadan No 3, Gharpure Path, Formally Known As Mugbhat
+                                  Lane, Girgaon, Mumbai - 400004 Maharashtra, India
+                              </h2>
+                          </div>
+                      </div>
+                      <hr>
+                  </div>
+                  <div class="col-12">
+                      <div class="media pt-2">
+                          <i class="material-icons md-light pmd-icon-md mr-3">work</i>
+                          <div class="media-body">
+                              <p class="pmd-list-subtitle mb-1 text-white">Works</p>
+                              <h2 class="pmd-list-title text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                                  18th Road, Opp Electric Office, Chembur (east), Mumbai - 400071 Maharashtra, India
+                              </h2>
+                          </div>
+                      </div>
+                      <hr>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6 col-12">
+                      <div class="media pt-2">
+                          <i class="material-icons md-light pmd-icon-md mr-3">call</i>
+                          <div class="media-body">
+                              <p class="pmd-list-subtitle mb-1 text-white">Local Inquiry</p>
+                              <h2 class="pmd-list-title"><a class="text-white" href="tel:+91 79255 01989" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">+91 9912567282</a></h2>
+                          </div>
+                      </div>
+                      <hr>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                      <div class="media pt-2">
+                          <div class="media-body">
+                              <p class="pmd-list-subtitle mb-1 text-white">Global Inquiry</p>
+                              <h2 class="pmd-list-title"><a class="text-white" href="tel:+1 215 397 3819" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">+1 569 3977856</a></h2>
+                          </div>
+                      </div>
+                      <hr>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-12">
+                      <div class="media pt-2">
+                          <i class="material-icons md-light pmd-icon-md mr-3">email</i>
+                          <div class="media-body">
+                              <p class="pmd-list-subtitle mb-1 text-white">Email Address</p>
+                              <h2 class="pmd-list-title"><a class="text-white" href="mailto:support@xyz.com" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">support&#64;gmail.com</a></h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

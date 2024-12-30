@@ -1,0 +1,70 @@
+<div class="container">
+    <mat-card>
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-content>
+        <div class="form-box">
+          <form [formGroup]="customer" (ngSubmit)="handleSubmit()">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="First Name" type="text" formControlName="firstName" />
+              <mat-error *ngIf="customer.get('firstName')?.hasError('required')">First Name is required</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last Name" type="text" formControlName="lastName" />
+              <mat-error *ngIf="customer.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Email ID</mat-label>
+              <input matInput placeholder="Email ID" type="email" formControlName="email" />
+              <mat-error *ngIf="customer.get('email')?.hasError('required')">Email is required</mat-error>
+              <mat-error *ngIf="customer.get('email')?.hasError('email')">Enter a valid email</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="Phone Number" type="tel" formControlName="phone" />
+              <mat-error *ngIf="customer.get('phone')?.hasError('required')">Phone Number is required</mat-error>
+              <mat-error *ngIf="customer.get('phone')?.hasError('pattern')">Enter a valid 10-digit phone number</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Address" type="text" formControlName="address" />
+              <mat-error *ngIf="customer.get('address')?.hasError('required')">Address is required</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="New Password" formControlName="password" />
+              <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="customer.get('password')?.hasError('required')">Password is required</mat-error>
+              <mat-error *ngIf="customer.get('password')?.hasError('minLength')">Password must be at least 6 characters long</mat-error>
+            </mat-form-field>
+  
+          <!-- <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput [type]="hidePassword ? 'password' : 'text'0.
+              " placeholder="Confirm Password" formControlName="confirmPassword" />
+              <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="customer.get('confirmPassword')?.hasError('required')">Confirm Password is required</mat-error>
+              <mat-error *ngIf="customer.hasError('notSame')">Passwords must match</mat-error>
+            </mat-form-field>--> 
+  
+            <div class="button-group">
+              <button mat-raised-button color="primary" type="submit">Sign Up</button>
+              <br><br>
+              <button mat-raised-button color="warn" type="button" (click)="reloadPage()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
