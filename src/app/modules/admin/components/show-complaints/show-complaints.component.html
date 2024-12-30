@@ -1,0 +1,87 @@
+<!-- <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>EMAIL</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>COMPLAINT TITLE</th>
+            <th>DESCRIPTION</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let complaint of complaints">
+            <th>{{complaint.id}}</th>
+            <th>{{ complaint.name }}</th>
+            <th>{{ complaint.email}}</th>
+            <th>{{ complaint.address}}</th>
+            <th>{{ complaint.phone}}</th>
+
+            <th>{{ complaint.complaintTitle}}</th>
+
+            <th>{{ complaint.description}}</th>
+
+             <th><button (click)="delete(student.id)">delete Student</button></th> 
+        </tr>
+    </tbody> -->
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">Grievances List</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>
+                                    <label class="customcheckbox m-b-20">
+                                        <input type="checkbox" id="mainCheckbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </th>
+                                <th scope="col">ID</th>
+                                <th scope="col">NAME</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">ADDRESS</th>
+                                <th scope="col">PHONE NO</th>
+                                <th scope="col">COMPLAINT TITLE</th>
+
+                                <th scope="col">DESCRIPTION</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="customtable">
+                            <tr *ngFor="let complaint of complaints">
+                                <th>
+                                    <label class="customcheckbox">
+                                        <input type="checkbox" class="listCheckbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </th>
+                                <th>{{complaint.id}}</th>
+                                <th>{{ complaint.name }}</th>
+                                <th>{{ complaint.email}}</th>
+                                <th>{{ complaint.address}}</th>
+                                <th>{{ complaint.phone}}</th>
+
+                                <th>{{ complaint.complaintTitle}}</th>
+
+                                <th>{{ complaint.description}}</th>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

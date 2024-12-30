@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://blogimage.vantagecircle.com/content/images/2019/10/employee-grievances.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+mat-card{
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #D3C5E5;
+    @media screen and (max-width:500px){
+        max-width: 90%;
+    }
+}
+mat-card-title{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+max-form-field{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+button{
+    width: 100%;
+
+}
+@media screen and (max-width:500px){
+    mat-card-title{
+        font-size: 20px;
+
+    }
+    mat-form-field{
+        margin-bottom: 10px;
+    }
+}
+.error-snackbar{
+    background-color: red !important;
+}
